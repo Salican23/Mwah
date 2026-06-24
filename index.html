@@ -6,12 +6,11 @@
 <title>❤️ For Sally ❤️</title>
 
 <style>
-/* ===== PAGE FIX (SCROLL WORKS 100%) ===== */
+
 html, body{
 margin:0;
 padding:0;
 min-height:100%;
-height:auto;
 overflow-x:hidden;
 overflow-y:auto;
 font-family:Georgia, serif;
@@ -20,7 +19,7 @@ color:white;
 text-align:center;
 }
 
-/* ===== LOCK SCREEN ===== */
+/* LOCK */
 #lock{
 position:fixed;
 inset:0;
@@ -32,17 +31,12 @@ align-items:center;
 z-index:999;
 }
 
-#lock h2{
-font-size:2rem;
-}
-
 #lock input{
 padding:12px;
 font-size:18px;
 border:none;
 border-radius:10px;
 text-align:center;
-outline:none;
 }
 
 #lock button{
@@ -52,18 +46,17 @@ border:none;
 border-radius:20px;
 cursor:pointer;
 background:white;
-color:#ff4d88;
+color:#ff4d4d;
 font-weight:bold;
 }
 
-/* ===== MAIN PAGE ===== */
+/* MAIN */
 #main{
 display:none;
 padding:40px 20px 120px;
 min-height:150vh;
 }
 
-/* TITLE */
 h1{
 font-size:3rem;
 animation:pulse 2s infinite;
@@ -75,7 +68,7 @@ animation:pulse 2s infinite;
 100%{transform:scale(1);}
 }
 
-/* LETTER BOX */
+/* LETTER */
 .letter{
 background:rgba(255,255,255,0.25);
 padding:30px;
@@ -88,25 +81,32 @@ backdrop-filter:blur(10px);
 box-shadow:0 0 25px rgba(255,255,255,0.3);
 }
 
-/* ===== FLOATING HEARTS + KITTENS FIXED ===== */
+/* ===== FIXED FLOAT SYSTEM ===== */
 .heart, .kitten{
 position:fixed;
-bottom:-40px;
+left:0;
+bottom:0;
 pointer-events:none;
 opacity:0.9;
 animation: floatUp linear forwards;
 }
 
-.heart{ color:white; }
-.kitten{ font-size:22px; }
+.heart{
+color:white;
+}
 
+.kitten{
+font-size:22px;
+}
+
+/* THIS IS THE IMPORTANT FIX */
 @keyframes floatUp{
 0%{
-transform:translateY(0);
+transform: translateY(0);
 opacity:1;
 }
 100%{
-transform:translateY(-120vh);
+transform: translateY(-120vh);
 opacity:0;
 }
 }
@@ -116,7 +116,7 @@ opacity:0;
 
 <body>
 
-<!-- LOCK SCREEN -->
+<!-- LOCK -->
 <div id="lock">
 <h2>Enter Password ❤️</h2>
 <p>Hint: I love ___</p>
@@ -124,7 +124,7 @@ opacity:0;
 <button onclick="check()">Unlock ❤️</button>
 </div>
 
-<!-- MAIN CONTENT -->
+<!-- MAIN -->
 <div id="main">
 
 <h1>❤️ Sally ❤️</h1>
@@ -134,32 +134,27 @@ opacity:0;
 <h2>To Sally ❤️</h2>
 
 <p>
-Hey Sally… I know you might be sleeping right now, or just resting your eyes, but I needed to write this to you.
+Hey Sally… I know you might be sleeping right now, but I needed to write this to you.
 </p>
 
 <p>
-I love you so much. You make my world feel better, brighter, and complete.
-Without you, something inside me feels missing.
+I love you so much. You are my happiness, my peace, my everything.
 </p>
 
 <p>
-You changed me in ways I never expected. Everything I am today is because of you.
+You changed my life in ways I never expected.
 </p>
 
 <p>
-Every day you make me smile even when I’m not okay.
+Every day I think about you and smile like crazy.
 </p>
 
 <p>
-I think about you all the time and I always end up smiling like an idiot.
+You are my person. I will never leave you.
 </p>
 
 <p>
-You are my person. I will never leave you or replace you.
-</p>
-
-<p>
-Sally Falcon Falkenberg Sorensen… I love you with my whole heart.
+Sally… I love you with my whole heart.
 </p>
 
 <h3>❤️ Forever Yours ❤️</h3>
@@ -170,7 +165,7 @@ Sally Falcon Falkenberg Sorensen… I love you with my whole heart.
 
 <script>
 
-/* PASSWORD CHECK */
+/* PASSWORD */
 function check(){
 let p=document.getElementById("pass").value.toLowerCase();
 
@@ -214,13 +209,13 @@ document.body.appendChild(k);
 setTimeout(()=>k.remove(),9000);
 }
 
-/* START EFFECTS */
+/* START */
 function startEffects(){
 setInterval(hearts,200);
 setInterval(kittens,700);
 }
 
-/* BURST EFFECT */
+/* BURST */
 function heartBurst(){
 for(let i=0;i<25;i++){
 let h=document.createElement("div");
