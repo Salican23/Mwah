@@ -15,7 +15,7 @@ color:white;
 text-align:center;
 }
 
-/* LOGIN SCREEN */
+/* LOCK SCREEN */
 #lock{
 position:fixed;
 width:100%;
@@ -28,22 +28,17 @@ align-items:center;
 z-index:999;
 }
 
-#lock h2{
-font-size:2rem;
-}
-
 #lock input{
 padding:12px;
 font-size:18px;
 border:none;
-border-radius:12px;
+border-radius:10px;
 text-align:center;
-margin-top:10px;
 }
 
 #lock button{
 margin-top:10px;
-padding:10px 25px;
+padding:10px 20px;
 border:none;
 border-radius:20px;
 cursor:pointer;
@@ -71,7 +66,7 @@ animation:pulse 2s infinite;
 100%{transform:scale(1);}
 }
 
-/* LETTER BOX */
+/* LETTER */
 .letter{
 background:rgba(255,255,255,0.25);
 padding:35px;
@@ -112,7 +107,6 @@ opacity:0;
 }
 }
 
-/* fade */
 .fadeIn{
 animation:fade 1.2s ease;
 }
@@ -126,7 +120,7 @@ to{opacity:1;}
 
 <body>
 
-<!-- PASSWORD SCREEN -->
+<!-- PASSWORD -->
 <div id="lock">
 <h2>Enter Password ❤️</h2>
 <p>Hint: I love ___</p>
@@ -134,7 +128,7 @@ to{opacity:1;}
 <button onclick="check()">Unlock ❤️</button>
 </div>
 
-<!-- MAIN PAGE -->
+<!-- MAIN -->
 <div id="main">
 
 <h1>❤️ Sally ❤️</h1>
@@ -144,35 +138,35 @@ to{opacity:1;}
 <h2>To Sally ❤️</h2>
 
 <p>
-Hey Sally… I know you might be sleeping right now, or just resting your eyes, but I couldn’t hold this in anymore so I had to write to you.
+Hey Sally… I know you might be sleeping right now, or just resting your eyes, but I couldn’t keep this inside me anymore so I had to write to you.
 </p>
 
 <p>
-I love you so much. Like really, deeply, more than I can explain with words. Without you I feel empty sometimes, like something is missing when you’re not here.
+I love you so much. Like genuinely, deeply, in a way I can’t fully explain. Without you I don’t feel like myself, something feels missing when you’re not here.
 </p>
 
 <p>
-You changed me in ways I never expected. The person I am today is because of you. The way I think, the way I care, the way I smile… all because of you.
+You changed me in ways I never expected. The person I am today is because of you. I’ll always be grateful for you.
 </p>
 
 <p>
-Every day you are the reason I smile. Even when I’m tired or stressed, just thinking about you makes everything better instantly.
+Every day you are the reason I smile. Even when I’m stressed or tired, thinking about you makes everything better.
 </p>
 
 <p>
-I swear sometimes I just sit there thinking about you and I start smiling like an idiot. You’re so cute it actually drives me crazy in the best way.
+I swear I just sit there thinking about you and I start smiling like crazy. You’re so cute it drives me insane in the best way.
 </p>
 
 <p>
-If you ever think I would cheat on you, I won’t. Not now, not ever. You are my person. My girl. My everything.
+If you ever think I would cheat on you, I won’t. Not now, not ever. You are my everything.
 </p>
 
 <p>
-When I think about losing you, it honestly hurts. I don’t want that. I want you with me, laughing with me, growing with me, always.
+When I think about losing you, it hurts. I don’t want that. I want you with me always.
 </p>
 
 <p>
-Sally Falcon Falkenberg Sorensen… I love you with my whole heart. I would do anything for you. I will always try my best for you no matter what.
+Sally Falcon Falkenberg Sorensen… I love you with my whole heart. I would do anything for you.
 </p>
 
 <h3>❤️ Forever Yours ❤️</h3>
@@ -201,7 +195,7 @@ alert("Wrong password ❤️");
 function hearts(){
 let h=document.createElement("div");
 h.className="heart";
-h.innerHTML="🤍";
+h.innerHTML="❤️";
 h.style.left=Math.random()*100+"vw";
 h.style.fontSize=(10+Math.random()*25)+"px";
 document.body.appendChild(h);
@@ -219,17 +213,17 @@ document.body.appendChild(k);
 setTimeout(()=>k.remove(),7000);
 }
 
-/* effects */
+/* START EFFECTS */
 function startEffects(){
 setInterval(hearts,200);
 setInterval(kittens,800);
 }
 
-/* unlock burst */
+/* BURST */
 function heartBurst(){
 for(let i=0;i<25;i++){
 let h=document.createElement("div");
-h.innerHTML="🤍";
+h.innerHTML="❤️";
 h.style.position="fixed";
 h.style.left="50%";
 h.style.top="50%";
