@@ -1,69 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Sally ❤️</title>
+<title>Sally ❤️</title>
 
 <style>
 body{
 margin:0;
 font-family:Arial;
-background:linear-gradient(135deg,#ff4d88,#ff99cc,#ff5fa2);
-overflow:hidden;
+background:linear-gradient(135deg,#ff4d88,#ff99cc);
 color:white;
 text-align:center;
 }
 
-h1{
-font-size:3rem;
-margin-top:30px;
-animation:pulse 2s infinite;
+#lock{
+position:fixed;
+width:100%;
+height:100%;
+background:black;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 }
 
-.subtitle{
-font-size:1.2rem;
-margin-bottom:20px;
-}
-
-.counter{
-font-size:2rem;
-margin:20px;
-}
-
-.letter{
-background:rgba(255,255,255,0.15);
-padding:25px;
-border-radius:20px;
-max-width:800px;
-margin:auto;
-backdrop-filter:blur(10px);
-line-height:1.7;
+input{
+padding:10px;
+font-size:18px;
+border-radius:10px;
+border:none;
+text-align:center;
 }
 
 button{
-margin-top:20px;
-padding:12px 25px;
+margin-top:10px;
+padding:10px 20px;
 border:none;
-border-radius:30px;
-font-size:1rem;
+border-radius:20px;
 cursor:pointer;
-background:white;
-color:#ff2d75;
-font-weight:bold;
 }
 
-button:hover{
-transform:scale(1.05);
+#main{
+display:none;
+padding:30px;
 }
 
 .heart{
 position:fixed;
 bottom:-20px;
-animation:float 6s linear forwards;
 color:red;
-font-size:20px;
-pointer-events:none;
+animation:float 6s linear forwards;
 }
 
 @keyframes float{
@@ -72,94 +57,51 @@ transform:translateY(-110vh);
 opacity:0;
 }
 }
-
-@keyframes pulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.08);}
-100%{transform:scale(1);}
-}
-
-#secret{
-display:none;
-margin-top:15px;
-font-size:1.2rem;
-}
 </style>
 </head>
 
 <body>
 
+<!-- PASSWORD SCREEN -->
+<div id="lock">
+<h2>Enter Password ❤️</h2>
+<input id="pass" placeholder="password">
+<button onclick="check()">Enter</button>
+</div>
+
+<!-- MAIN SITE -->
+<div id="main">
+
 <h1>❤️ Sally ❤️</h1>
 
-<div class="subtitle">
-You are my favorite person in the world.
-</div>
-
-<div class="counter" id="counter">0 ❤️</div>
-
-<div class="letter">
-
-<h2>To Sally ❤️</h2>
-
 <p>
-Hey Sally, I know you're probably sleeping right now.
-I just wanted to tell you something important.
+I love you so much Sally. This is all for you ❤️
 </p>
-
-<p>
-I love you so much. You make my life feel complete in a way I never knew was possible.
-Every day with you is something I’m grateful for.
-</p>
-
-<p>
-You are the reason I smile, the reason I stay strong, and the reason I look forward to tomorrow.
-Your smile is my favorite thing in the entire world.
-</p>
-
-<p>
-I don’t always know how to express it perfectly, but I hope you can feel it in everything I do.
-You matter to me more than words can explain.
-</p>
-
-<button onclick="showSecret()">Click for secret 💌</button>
-
-<div id="secret">
-Sally… I really, truly love you. Forever and always. ❤️
-</div>
-
-<p>
-No matter what happens, you will always have a special place in my heart.
-</p>
-
-<h3>❤️ I Love You, Sally ❤️</h3>
 
 </div>
 
 <script>
 
-// COUNTER
-let count = 0;
-setInterval(()=>{
-count += Math.floor(Math.random()*4000);
-document.getElementById("counter").innerText = count + " ❤️";
-},100);
+function check(){
+let p = document.getElementById("pass").value;
 
-// HEARTS
-setInterval(()=>{
-let heart = document.createElement("div");
-heart.className="heart";
-heart.innerHTML="❤️";
-heart.style.left=Math.random()*100+"vw";
-heart.style.fontSize=(10+Math.random()*30)+"px";
-document.body.appendChild(heart);
-
-setTimeout(()=>heart.remove(),6000);
-},120);
-
-// SECRET
-function showSecret(){
-document.getElementById("secret").style.display="block";
+if(p === "sally"){
+document.getElementById("lock").style.display="none";
+document.getElementById("main").style.display="block";
+}else{
+alert("Wrong password ❤️");
 }
+}
+
+// hearts
+setInterval(()=>{
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"vw";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),6000);
+},150);
 
 </script>
 
