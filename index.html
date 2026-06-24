@@ -6,12 +6,12 @@
 <title>❤️ For Sally ❤️</title>
 
 <style>
-
-/* ===== GLOBAL ===== */
+/* ===== PAGE FIX (SCROLL WORKS 100%) ===== */
 html, body{
 margin:0;
 padding:0;
 min-height:100%;
+height:auto;
 overflow-x:hidden;
 overflow-y:auto;
 font-family:Georgia, serif;
@@ -32,17 +32,22 @@ align-items:center;
 z-index:999;
 }
 
+#lock h2{
+font-size:2rem;
+}
+
 #lock input{
 padding:12px;
 font-size:18px;
 border:none;
 border-radius:10px;
 text-align:center;
+outline:none;
 }
 
 #lock button{
 margin-top:10px;
-padding:10px 20px;
+padding:10px 25px;
 border:none;
 border-radius:20px;
 cursor:pointer;
@@ -51,7 +56,7 @@ color:#ff4d88;
 font-weight:bold;
 }
 
-/* ===== MAIN ===== */
+/* ===== MAIN PAGE ===== */
 #main{
 display:none;
 padding:40px 20px 120px;
@@ -70,7 +75,7 @@ animation:pulse 2s infinite;
 100%{transform:scale(1);}
 }
 
-/* LETTER */
+/* LETTER BOX */
 .letter{
 background:rgba(255,255,255,0.25);
 padding:30px;
@@ -83,7 +88,7 @@ backdrop-filter:blur(10px);
 box-shadow:0 0 25px rgba(255,255,255,0.3);
 }
 
-/* ===== FLOATING ANIMATION (FIXED) ===== */
+/* ===== FLOATING HEARTS + KITTENS FIXED ===== */
 .heart, .kitten{
 position:fixed;
 bottom:-40px;
@@ -111,7 +116,7 @@ opacity:0;
 
 <body>
 
-<!-- LOCK -->
+<!-- LOCK SCREEN -->
 <div id="lock">
 <h2>Enter Password ❤️</h2>
 <p>Hint: I love ___</p>
@@ -119,7 +124,7 @@ opacity:0;
 <button onclick="check()">Unlock ❤️</button>
 </div>
 
-<!-- MAIN -->
+<!-- MAIN CONTENT -->
 <div id="main">
 
 <h1>❤️ Sally ❤️</h1>
@@ -133,11 +138,12 @@ Hey Sally… I know you might be sleeping right now, or just resting your eyes, 
 </p>
 
 <p>
-I love you so much. You make my world feel better in every way. Without you everything feels empty.
+I love you so much. You make my world feel better, brighter, and complete.
+Without you, something inside me feels missing.
 </p>
 
 <p>
-You changed me in ways I never expected. Everything I am is because of you.
+You changed me in ways I never expected. Everything I am today is because of you.
 </p>
 
 <p>
@@ -145,7 +151,7 @@ Every day you make me smile even when I’m not okay.
 </p>
 
 <p>
-I think about you all the time and I can’t stop smiling like an idiot.
+I think about you all the time and I always end up smiling like an idiot.
 </p>
 
 <p>
@@ -153,7 +159,7 @@ You are my person. I will never leave you or replace you.
 </p>
 
 <p>
-Sally… I love you with my whole heart.
+Sally Falcon Falkenberg Sorensen… I love you with my whole heart.
 </p>
 
 <h3>❤️ Forever Yours ❤️</h3>
@@ -164,6 +170,7 @@ Sally… I love you with my whole heart.
 
 <script>
 
+/* PASSWORD CHECK */
 function check(){
 let p=document.getElementById("pass").value.toLowerCase();
 
@@ -173,7 +180,8 @@ document.getElementById("main").style.display="block";
 
 startEffects();
 heartBurst();
-}else{
+}
+else{
 alert("Wrong password ❤️");
 }
 }
@@ -212,7 +220,7 @@ setInterval(hearts,200);
 setInterval(kittens,700);
 }
 
-/* BURST */
+/* BURST EFFECT */
 function heartBurst(){
 for(let i=0;i<25;i++){
 let h=document.createElement("div");
