@@ -7,27 +7,24 @@
 
 <style>
 
-/* ===== GLOBAL SCROLL FIX (THIS IS THE IMPORTANT PART) ===== */
+/* ===== GLOBAL ===== */
 html, body{
 margin:0;
 padding:0;
-width:100%;
 min-height:100%;
-height:auto;
 overflow-x:hidden;
 overflow-y:auto;
--webkit-overflow-scrolling: touch;
-font-family: Georgia, serif;
-background: linear-gradient(135deg,#ff4d88,#ff99cc,#ff66b2);
+font-family:Georgia, serif;
+background:linear-gradient(135deg,#ff4d88,#ff99cc,#ff66b2);
 color:white;
 text-align:center;
 }
 
-/* LOCK SCREEN */
+/* ===== LOCK SCREEN ===== */
 #lock{
 position:fixed;
 inset:0;
-background: linear-gradient(135deg,#ff4d88,#ff66b2,#ff99cc);
+background:linear-gradient(135deg,#ff4d88,#ff66b2,#ff99cc);
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -41,7 +38,6 @@ font-size:18px;
 border:none;
 border-radius:10px;
 text-align:center;
-outline:none;
 }
 
 #lock button{
@@ -55,13 +51,11 @@ color:#ff4d88;
 font-weight:bold;
 }
 
-/* MAIN PAGE (FORCES HEIGHT SO SCROLL WORKS) */
+/* ===== MAIN ===== */
 #main{
 display:none;
-padding:40px 20px 100px 20px;
-min-height:150vh; /* 🔥 THIS IS WHAT FORCES SCROLL */
-position:relative;
-z-index:2;
+padding:40px 20px 120px;
+min-height:150vh;
 }
 
 /* TITLE */
@@ -76,7 +70,7 @@ animation:pulse 2s infinite;
 100%{transform:scale(1);}
 }
 
-/* LETTER BOX */
+/* LETTER */
 .letter{
 background:rgba(255,255,255,0.25);
 padding:30px;
@@ -85,32 +79,29 @@ max-width:900px;
 margin:auto;
 line-height:2;
 font-size:1.2rem;
-backdrop-filter: blur(10px);
+backdrop-filter:blur(10px);
 box-shadow:0 0 25px rgba(255,255,255,0.3);
 }
 
-/* HEARTS */
-.heart{
+/* ===== FLOATING ANIMATION (FIXED) ===== */
+.heart, .kitten{
 position:fixed;
-bottom:-20px;
-color:white;
-animation:float 6s linear forwards;
-font-size:18px;
+bottom:-40px;
 pointer-events:none;
+opacity:0.9;
+animation: floatUp linear forwards;
 }
 
-/* KITTENS */
-.kitten{
-position:fixed;
-bottom:-20px;
-animation:float 7s linear forwards;
-font-size:22px;
-pointer-events:none;
-}
+.heart{ color:white; }
+.kitten{ font-size:22px; }
 
-@keyframes float{
-to{
-transform:translateY(-110vh);
+@keyframes floatUp{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
 opacity:0;
 }
 }
@@ -142,27 +133,27 @@ Hey Sally… I know you might be sleeping right now, or just resting your eyes, 
 </p>
 
 <p>
-I love you so much. Without you, everything feels incomplete. You are my happiness, my peace, my everything.
+I love you so much. You make my world feel better in every way. Without you everything feels empty.
 </p>
 
 <p>
-You changed my life in ways I never expected. Everything I am today is because of you.
+You changed me in ways I never expected. Everything I am is because of you.
 </p>
 
 <p>
-Every day you make me smile, even when I don’t feel okay. Just thinking about you fixes everything.
+Every day you make me smile even when I’m not okay.
 </p>
 
 <p>
-I think about you all the time and I always end up smiling like crazy.
+I think about you all the time and I can’t stop smiling like an idiot.
 </p>
 
 <p>
-You are my person. I will never cheat, never leave, never replace you.
+You are my person. I will never leave you or replace you.
 </p>
 
 <p>
-Sally Falcon Falkenberg Sorensen… I love you with my whole heart.
+Sally… I love you with my whole heart.
 </p>
 
 <h3>❤️ Forever Yours ❤️</h3>
@@ -182,8 +173,7 @@ document.getElementById("main").style.display="block";
 
 startEffects();
 heartBurst();
-}
-else{
+}else{
 alert("Wrong password ❤️");
 }
 }
@@ -191,32 +181,38 @@ alert("Wrong password ❤️");
 /* HEARTS */
 function hearts(){
 let h=document.createElement("div");
+h.className="heart";
 h.innerHTML="❤️";
-h.style.position="fixed";
+
 h.style.left=Math.random()*100+"vw";
 h.style.fontSize=(12+Math.random()*25)+"px";
-h.style.bottom="-20px";
+h.style.animationDuration=(4+Math.random()*3)+"s";
+
 document.body.appendChild(h);
-setTimeout(()=>h.remove(),6000);
+setTimeout(()=>h.remove(),8000);
 }
 
 /* KITTENS */
 function kittens(){
 let k=document.createElement("div");
+k.className="kitten";
 k.innerHTML="🐱";
-k.style.position="fixed";
+
 k.style.left=Math.random()*100+"vw";
-k.style.fontSize=(16+Math.random()*25)+"px";
-k.style.bottom="-20px";
+k.style.fontSize=(16+Math.random()*22)+"px";
+k.style.animationDuration=(5+Math.random()*3)+"s";
+
 document.body.appendChild(k);
-setTimeout(()=>k.remove(),7000);
+setTimeout(()=>k.remove(),9000);
 }
 
+/* START EFFECTS */
 function startEffects(){
 setInterval(hearts,200);
-setInterval(kittens,800);
+setInterval(kittens,700);
 }
 
+/* BURST */
 function heartBurst(){
 for(let i=0;i<25;i++){
 let h=document.createElement("div");
