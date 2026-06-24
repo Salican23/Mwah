@@ -1,231 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>❤️ For Sally ❤️</title>
-
-<style>
-body{
-margin:0;
-font-family:Georgia, serif;
-background:linear-gradient(135deg,#ff4d88,#ff99cc,#ff66b2);
-overflow:hidden;
-color:white;
-text-align:center;
-}
-
-/* LOCK SCREEN */
-#lock{
-position:fixed;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.95);
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-z-index:999;
-}
-
-#lock input{
-padding:12px;
-font-size:18px;
-border:none;
-border-radius:10px;
-text-align:center;
-}
-
-#lock button{
-margin-top:10px;
-padding:10px 20px;
-border:none;
-border-radius:20px;
-cursor:pointer;
-}
-
-/* MAIN */
-#main{
-display:none;
-padding:25px;
-position:relative;
-z-index:2;
-}
-
-h1{
-font-size:3rem;
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.05);}
-100%{transform:scale(1);}
-}
-
-/* LETTER */
-.letter{
-background:rgba(255,255,255,0.18);
-padding:35px;
-border-radius:25px;
-max-width:900px;
-margin:auto;
-line-height:2;
-font-size:1.35rem;
-backdrop-filter:blur(12px);
-box-shadow:0 0 25px rgba(255,255,255,0.25);
-}
-
-/* HEARTS */
-.heart{
-position:fixed;
-bottom:-20px;
-color:red;
-animation:float 6s linear forwards;
-font-size:18px;
-pointer-events:none;
-opacity:0.9;
-}
-
-/* KITTENS */
-.kitten{
-position:fixed;
-bottom:-20px;
-animation:float 7s linear forwards;
-font-size:22px;
-pointer-events:none;
-opacity:0.9;
-}
-
-@keyframes float{
-to{
-transform:translateY(-110vh);
-opacity:0;
-}
-}
-
-/* FADE IN */
-.fadeIn{
-animation:fade 1.2s ease;
-}
-
-@keyframes fade{
-from{opacity:0;}
-to{opacity:1;}
-}
-</style>
-</head>
-
-<body>
-
-<!-- PASSWORD -->
-<div id="lock">
-<h2>Enter Password ❤️</h2>
-<p>Hint: my love</p>
-<input id="pass" placeholder="password">
-<button onclick="check()">Enter</button>
-</div>
-
-<!-- MAIN -->
-<div id="main">
-
-<h1>❤️ Sally ❤️</h1>
-
 <div class="letter fadeIn">
-
-<p style="font-style:italic; opacity:0.9;">
-I wrote this from my heart… I hope you feel it the way I mean it.
-</p>
 
 <h2>To Sally ❤️</h2>
 
 <p>
-Sally… I don’t even know where to start.
-You make everything feel softer, warmer, better.
+Hey Sally… I know you might be sleeping right now, or maybe just resting your eyes, but I couldn’t keep this inside me anymore so I had to write to you.
 </p>
 
 <p>
-I love you in a way I can’t fully explain.
-You’re my peace, my happiness, my favorite person.
+I just wanted to let you know something really important… I love you so much. Like genuinely, deeply, in a way I can’t even fully explain with words. Without you I don’t feel like myself, like something inside me is missing when you’re not here.
 </p>
 
 <p>
-Every day with you means something to me.
-Even the small moments feel special because it’s you.
+You changed me in ways I never expected. The person I am today, the way I think, the way I feel, the way I care… it’s all because of you. I’ll always be grateful for you, my love. You mean more to me than I can ever properly show.
 </p>
 
 <p>
-I will always choose you, always care for you,
-and always appreciate you more than words can show.
+Every single day you’re the reason I smile. Even when I’m stressed, even when I’m tired, even when everything feels off… just thinking about you makes everything better. Your smile literally stays in my head and it makes my heart feel weird in the best way possible.
+</p>
+
+<p>
+I swear sometimes I just sit there thinking about you and I can’t stop smiling like an idiot. You’re so cute it actually drives me crazy. I don’t even know how to explain it properly, I just love you a lot.
+</p>
+
+<p>
+If you ever think I would cheat on you, I won’t. Not now, not ever. You are the only person I want. I don’t care about anyone else. You are my girl, my person, my everything.
+</p>
+
+<p>
+When I think about losing you, it honestly makes me feel empty inside. I don’t ever want that to happen. You mean too much to me. I want you to stay with me, laugh with me, grow with me, and just exist with me through everything.
+</p>
+
+<p>
+Sally Falcon Falkenberg Sorensen… I love you with my whole heart. I would do anything for you. I would protect you, care for you, and always try my best for you no matter what happens.
+</p>
+
+<p>
+I don’t know if this message is perfect or not, but it’s real. It’s from me. And everything in it is true.
 </p>
 
 <h3>❤️ Forever Yours ❤️</h3>
 
 </div>
-
-</div>
-
-<script>
-
-function check(){
-let p=document.getElementById("pass").value.toLowerCase();
-
-if(p==="i love alican"){
-document.getElementById("lock").style.display="none";
-document.getElementById("main").style.display="block";
-
-startEffects();
-heartBurst();
-}else{
-alert("Wrong password ❤️");
-}
-}
-
-/* HEARTS */
-function hearts(){
-let h=document.createElement("div");
-h.className="heart";
-h.innerHTML="❤️";
-h.style.left=Math.random()*100+"vw";
-h.style.fontSize=(10+Math.random()*25)+"px";
-document.body.appendChild(h);
-setTimeout(()=>h.remove(),6000);
-}
-
-/* KITTENS */
-function kittens(){
-let k=document.createElement("div");
-k.className="kitten";
-k.innerHTML="🐱";
-k.style.left=Math.random()*100+"vw";
-k.style.fontSize=(18+Math.random()*20)+"px";
-document.body.appendChild(k);
-setTimeout(()=>k.remove(),7000);
-}
-
-/* START EFFECTS (SAFE) */
-function startEffects(){
-setInterval(hearts,180);
-setInterval(kittens,900);
-}
-
-/* UNLOCK BURST */
-function heartBurst(){
-for(let i=0;i<25;i++){
-let h=document.createElement("div");
-h.innerHTML="❤️";
-h.style.position="fixed";
-h.style.left="50%";
-h.style.top="50%";
-h.style.fontSize=(12+Math.random()*20)+"px";
-h.style.transform=`translate(${(Math.random()-0.5)*350}px, ${(Math.random()-0.5)*350}px)`;
-h.style.transition="1s";
-document.body.appendChild(h);
-setTimeout(()=>h.remove(),1000);
-}
-}
-
-</script>
-
-</body>
-</html>
