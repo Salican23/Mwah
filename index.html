@@ -8,18 +8,19 @@
 <style>
 body{
 margin:0;
-font-family:Arial;
+font-family:Georgia, serif;
 background:linear-gradient(135deg,#ff4d88,#ff99cc,#ff66b2);
 overflow:hidden;
 color:white;
 text-align:center;
 }
 
+/* LOCK SCREEN */
 #lock{
 position:fixed;
 width:100%;
 height:100%;
-background:black;
+background:rgba(0,0,0,0.95);
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -43,26 +44,36 @@ border-radius:20px;
 cursor:pointer;
 }
 
+/* MAIN */
 #main{
 display:none;
-padding:20px;
+padding:25px;
 position:relative;
 z-index:2;
 }
 
 h1{
-font-size:2.8rem;
+font-size:3rem;
 animation:pulse 2s infinite;
 }
 
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.05);}
+100%{transform:scale(1);}
+}
+
+/* LETTER */
 .letter{
-background:rgba(255,255,255,0.15);
-padding:20px;
-border-radius:20px;
-max-width:800px;
+background:rgba(255,255,255,0.18);
+padding:35px;
+border-radius:25px;
+max-width:900px;
 margin:auto;
-backdrop-filter:blur(10px);
-line-height:1.7;
+line-height:2;
+font-size:1.35rem;
+backdrop-filter:blur(12px);
+box-shadow:0 0 25px rgba(255,255,255,0.25);
 }
 
 /* HEARTS */
@@ -93,13 +104,7 @@ opacity:0;
 }
 }
 
-@keyframes pulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.05);}
-100%{transform:scale(1);}
-}
-
-/* gentle fade in */
+/* FADE IN */
 .fadeIn{
 animation:fade 1.2s ease;
 }
@@ -127,6 +132,10 @@ to{opacity:1;}
 <h1>❤️ Sally ❤️</h1>
 
 <div class="letter fadeIn">
+
+<p style="font-style:italic; opacity:0.9;">
+I wrote this from my heart… I hope you feel it the way I mean it.
+</p>
 
 <h2>To Sally ❤️</h2>
 
@@ -159,20 +168,20 @@ and always appreciate you more than words can show.
 <script>
 
 function check(){
-let p = document.getElementById("pass").value.toLowerCase();
+let p=document.getElementById("pass").value.toLowerCase();
 
-if(p === "i love alican"){
+if(p==="i love alican"){
 document.getElementById("lock").style.display="none";
 document.getElementById("main").style.display="block";
 
 startEffects();
-heartPop();
+heartBurst();
 }else{
 alert("Wrong password ❤️");
 }
 }
 
-/* LIGHT HEART STREAM (not laggy) */
+/* HEARTS */
 function hearts(){
 let h=document.createElement("div");
 h.className="heart";
@@ -183,7 +192,7 @@ document.body.appendChild(h);
 setTimeout(()=>h.remove(),6000);
 }
 
-/* LIGHT KITTENS */
+/* KITTENS */
 function kittens(){
 let k=document.createElement("div");
 k.className="kitten";
@@ -194,25 +203,24 @@ document.body.appendChild(k);
 setTimeout(()=>k.remove(),7000);
 }
 
-/* START EFFECTS (SAFE SPEED) */
+/* START EFFECTS (SAFE) */
 function startEffects(){
-setInterval(hearts,180);   // slower = no lag
-setInterval(kittens,900);  // safe for phones
+setInterval(hearts,180);
+setInterval(kittens,900);
 }
 
-/* SMALL BUT NICE UNLOCK BURST */
-function heartPop(){
-for(let i=0;i<20;i++){
+/* UNLOCK BURST */
+function heartBurst(){
+for(let i=0;i<25;i++){
 let h=document.createElement("div");
 h.innerHTML="❤️";
 h.style.position="fixed";
 h.style.left="50%";
 h.style.top="50%";
 h.style.fontSize=(12+Math.random()*20)+"px";
-h.style.transform=`translate(${(Math.random()-0.5)*300}px, ${(Math.random()-0.5)*300}px)`;
+h.style.transform=`translate(${(Math.random()-0.5)*350}px, ${(Math.random()-0.5)*350}px)`;
 h.style.transition="1s";
 document.body.appendChild(h);
-
 setTimeout(()=>h.remove(),1000);
 }
 }
