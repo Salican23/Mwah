@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Sally ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:linear-gradient(135deg,#ff5f9e,#ff2d75,#ff84b8);
+font-family:Arial,sans-serif;
+overflow-x:hidden;
+color:white;
+text-align:center;
+min-height:100vh;
+}
+
+.container{
+padding:40px 20px;
+position:relative;
+z-index:2;
+}
+
+h1{
+font-size:4rem;
+margin-bottom:10px;
+animation:pulse 2s infinite;
+}
+
+.subtitle{
+font-size:1.4rem;
+margin-bottom:25px;
+}
+
+.counter{
+font-size:2.5rem;
+font-weight:bold;
+margin:20px;
+}
+
+.letter{
+max-width:900px;
+margin:auto;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:25px;
+line-height:1.8;
+font-size:1.15rem;
+}
+
+button{
+padding:15px 30px;
+border:none;
+border-radius:50px;
+background:white;
+color:#ff2d75;
+font-size:1.2rem;
+font-weight:bold;
+cursor:pointer;
+margin-top:20px;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.heart{
+position:fixed;
+bottom:-50px;
+animation:float linear forwards;
+pointer-events:none;
+}
+
+@keyframes float{
+from{
+transform:translateY(0);
+opacity:1;
+}
+to{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.08);}
+100%{transform:scale(1);}
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>❤️ Sally ❤️</h1>
+
+<div class="subtitle">
+Out of billions of people in the world,
+my favorite person will always be you.
+</div>
+
+<div class="counter" id="counter">
+0 ❤️
+</div>
+
+<div class="letter">
+
+<h2>❤️ To Sally ❤️</h2>
+
+<br>
+
+<p>
+Hey Sally,
+<br><br>
+
+I know you're probably sleeping right now, but I wanted to leave
+something for you to read when you wake up.
+
+</p>
+
+<br>
+
+<p>
+I just want you to know how much I love you.
+Honestly, without you, life doesn't feel the same.
+You've changed me in ways I never thought possible,
+and I'll always be grateful for that.
+</p>
+
+<br>
+
+<p>
+Sally, you are the reason I smile every day.
+Your smile is so cute that sometimes I genuinely don't know
+what to do with myself.
+</p>
+
+<br>
+
+<p>
+I think about you when I wake up,
+throughout the day,
+and before I go to sleep.
+</p>
+
+<br>
+
+<p>
+When I've had bad days,
+you're the person I wish was beside me.
+When things hurt,
+you're the person I want to talk to.
+When something good happens,
+you're the first person I want to tell.
+</p>
+
+<br>
+
+<p>
+I love your smile.<br>
+I love your laugh.<br>
+I love your personality.<br>
+I love the way you make me feel.<br>
+I love every little thing that makes you who you are.
+</p>
+
+<br>
+
+<h3>
+❤️ Sally Falcon Falkenberg Sorensen ❤️
+</h3>
+
+<br>
+
+<p>
+I love you with all my heart.
+</p>
+
+<p>
+Forever & Always,
+<br>
+Ufuk ❤️
+</p>
+
+<br>
+
+<pre style="font-size:10px;overflow:auto;color:white;">
+⠀⢀⣤⣾⣿⣿⣿⣿⣿⣶⣤⡀⢀⣤⣶⣿⣿⣿⣿⣿⣷⣤⡀⠀⠀
+⠀⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀
+⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄
+⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀
+⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀
+⠀⠀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⠀⠀
+⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀
+</pre>
+
+</div>
+
+<button onclick="heartExplosion()">
+❤️ Sally, Click Me ❤️
+</button>
+
+</div>
+
+<script>
+
+let count = 0;
+const target = 1000000;
+
+const counter = document.getElementById("counter");
+
+const interval = setInterval(() => {
+
+count += Math.floor(Math.random()*5000);
+
+if(count >= target){
+count = target;
+clearInterval(interval);
+counter.innerHTML = "1,000,000 ❤️ I LOVE YOU'S ❤️";
+}else{
+counter.innerHTML = count.toLocaleString() + " ❤️";
+}
+
+},30);
+
+function createHeart(){
+
+const heart = document.createElement("div");
+
+heart.className = "heart";
+heart.innerHTML = "❤️";
+
+heart.style.left = Math.random()*100 + "vw";
+heart.style.fontSize = (20 + Math.random()*40) + "px";
+heart.style.animationDuration = (4 + Math.random()*4) + "s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},8000);
+
+}
+
+setInterval(createHeart,120);
+
+function heartExplosion(){
+
+const messages = [
+"I Love You Sally ❤️",
+"Forever & Always ❤️",
+"My Favorite Person ❤️",
+"You Mean Everything ❤️",
+"❤️ Sally ❤️"
+];
+
+for(let i=0;i<100;i++){
+
+const heart = document.createElement("div");
+
+heart.className = "heart";
+heart.innerHTML =
+messages[Math.floor(Math.random()*messages.length)];
+
+heart.style.left = Math.random()*100 + "vw";
+heart.style.fontSize = "20px";
+heart.style.animationDuration = "5s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},5000);
+}
+
+}
+
+</script>
+
+</body>
+</html>
