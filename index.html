@@ -1,41 +1,38 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>❤️ For Sally ❤️</title>
+<title>❤️ For My Love ❤️</title>
 
 <style>
-
-html, body{
+html,body{
 margin:0;
 padding:0;
-min-height:100%;
-overflow-x:hidden;
-overflow-y:auto;
-font-family:Georgia, serif;
+font-family:Georgia,serif;
 background:linear-gradient(135deg,#ff4d88,#ff99cc,#ff66b2);
 color:white;
 text-align:center;
+overflow-x:hidden;
 }
 
-/* LOCK */
 #lock{
 position:fixed;
 inset:0;
-background:linear-gradient(135deg,#ff4d88,#ff66b2,#ff99cc);
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
+background:linear-gradient(135deg,#ff4d88,#ff66b2,#ff99cc);
 z-index:999;
 }
 
 #lock input{
 padding:12px;
-font-size:18px;
 border:none;
 border-radius:10px;
+font-size:18px;
 text-align:center;
 }
 
@@ -45,16 +42,14 @@ padding:10px 25px;
 border:none;
 border-radius:20px;
 cursor:pointer;
-background:white;
-color:#ff4d4d;
 font-weight:bold;
+color:#ff4d88;
+background:white;
 }
 
-/* MAIN */
 #main{
 display:none;
 padding:40px 20px 120px;
-min-height:150vh;
 }
 
 h1{
@@ -63,98 +58,101 @@ animation:pulse 2s infinite;
 }
 
 @keyframes pulse{
-0%{transform:scale(1);}
 50%{transform:scale(1.05);}
-100%{transform:scale(1);}
 }
 
-/* LETTER */
 .letter{
-background:rgba(255,255,255,0.25);
-padding:30px;
-border-radius:25px;
 max-width:900px;
 margin:auto;
+padding:35px;
+border-radius:25px;
+background:rgba(255,255,255,0.2);
+backdrop-filter:blur(10px);
 line-height:2;
 font-size:1.2rem;
-backdrop-filter:blur(10px);
 box-shadow:0 0 25px rgba(255,255,255,0.3);
 }
 
-/* ===== FIXED FLOAT SYSTEM ===== */
-.heart, .kitten{
-position:fixed;
-left:0;
-bottom:0;
-pointer-events:none;
-opacity:0.9;
-animation: floatUp linear forwards;
-}
-
 .heart{
-color:white;
+position:fixed;
+bottom:-50px;
+pointer-events:none;
+animation:floatUp linear forwards;
 }
 
-.kitten{
-font-size:22px;
-}
-
-/* THIS IS THE IMPORTANT FIX */
 @keyframes floatUp{
-0%{
-transform: translateY(0);
+from{
+transform:translateY(0);
 opacity:1;
 }
-100%{
-transform: translateY(-120vh);
+to{
+transform:translateY(-120vh);
 opacity:0;
 }
 }
-
 </style>
+
 </head>
 
 <body>
 
-<!-- LOCK -->
 <div id="lock">
-<h2>Enter Password ❤️</h2>
-<p>Hint: I love ___</p>
-<input id="pass" placeholder="password">
+<h2>❤️ Enter Password ❤️</h2>
+<p>Hint: Your special word</p>
+<input id="pass" placeholder="Password">
 <button onclick="check()">Unlock ❤️</button>
 </div>
 
-<!-- MAIN -->
 <div id="main">
 
-<h1>❤️ Sally ❤️</h1>
+<h1>❤️ My Beautiful Girl ❤️</h1>
 
 <div class="letter">
 
-<h2>To Sally ❤️</h2>
+<h2>To The One I Love ❤️</h2>
 
 <p>
-Hey Sally… I know you might be sleeping right now, but I needed to write this to you.
+I wanted to make something special for you because sometimes words in a text message don't feel big enough for everything I want to say.
 </p>
 
 <p>
-I love you so much. You are my happiness, my peace, my everything.
+You mean so much to me. You make ordinary days feel special, and you make me smile even when life gets difficult.
 </p>
 
 <p>
-You changed my life in ways I never expected.
+When I think about my future, you're the person I want beside me. Not because I have to choose you, but because every day I want to choose you.
 </p>
 
 <p>
-Every day I think about you and smile like crazy.
+I love your smile, your voice, your laugh, your personality, and all the little things that make you who you are.
 </p>
 
 <p>
-You are my person. I will never leave you.
+I want you to know something important:
 </p>
 
 <p>
-Sally… I love you with my whole heart.
+My loyalty isn't a promise I make because I'm forced to. It's a choice I make because you're the only person I want.
+</p>
+
+<p>
+I have no interest in looking for someone else. I don't want anyone else. I don't need anyone else.
+</p>
+
+<p>
+You have my heart completely.
+</p>
+
+<p>
+I promise to be honest with you, respect you, support you, and stay faithful to you because that's what real love deserves.
+</p>
+
+<p>
+No matter where life takes us, I want you to remember that you are deeply loved, appreciated, and important to me.
+</p>
+
+<p>
+Thank you for being you.
 </p>
 
 <h3>❤️ Forever Yours ❤️</h3>
@@ -165,70 +163,38 @@ Sally… I love you with my whole heart.
 
 <script>
 
-/* PASSWORD */
 function check(){
 let p=document.getElementById("pass").value.toLowerCase();
 
-if(p==="i love alican"){
+if(p==="yourpassword"){
 document.getElementById("lock").style.display="none";
 document.getElementById("main").style.display="block";
-
-startEffects();
-heartBurst();
+startHearts();
 }
 else{
 alert("Wrong password ❤️");
 }
 }
 
-/* HEARTS */
-function hearts(){
-let h=document.createElement("div");
-h.className="heart";
-h.innerHTML="❤️";
+function createHeart(){
+let heart=document.createElement("div");
 
-h.style.left=Math.random()*100+"vw";
-h.style.fontSize=(12+Math.random()*25)+"px";
-h.style.animationDuration=(4+Math.random()*3)+"s";
+heart.className="heart";
+heart.innerHTML="❤️";
 
-document.body.appendChild(h);
-setTimeout(()=>h.remove(),8000);
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(15+Math.random()*30)+"px";
+heart.style.animationDuration=(4+Math.random()*4)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},8000);
 }
 
-/* KITTENS */
-function kittens(){
-let k=document.createElement("div");
-k.className="kitten";
-k.innerHTML="🐱";
-
-k.style.left=Math.random()*100+"vw";
-k.style.fontSize=(16+Math.random()*22)+"px";
-k.style.animationDuration=(5+Math.random()*3)+"s";
-
-document.body.appendChild(k);
-setTimeout(()=>k.remove(),9000);
-}
-
-/* START */
-function startEffects(){
-setInterval(hearts,200);
-setInterval(kittens,700);
-}
-
-/* BURST */
-function heartBurst(){
-for(let i=0;i<25;i++){
-let h=document.createElement("div");
-h.innerHTML="❤️";
-h.style.position="fixed";
-h.style.left="50%";
-h.style.top="50%";
-h.style.fontSize="20px";
-h.style.transform=`translate(${(Math.random()-0.5)*400}px, ${(Math.random()-0.5)*400}px)`;
-h.style.transition="1s";
-document.body.appendChild(h);
-setTimeout(()=>h.remove(),1000);
-}
+function startHearts(){
+setInterval(createHeart,250);
 }
 
 </script>
